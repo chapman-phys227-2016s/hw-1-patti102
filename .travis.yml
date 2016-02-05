@@ -5,6 +5,6 @@ python:
 install: "pip install pylint"
 # command to run tests
 script:
-  - nosetests
+  - "nosetests *.py" 
 notifications:
   email: false

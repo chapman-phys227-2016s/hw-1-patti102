@@ -1,8 +1,8 @@
 # PHYS227 HW 1
 
-**Author:** _\<your name\>_
+**Author:** Taylor Patti
 
-[![Build Status](https://travis-ci.org/chapman-phys227-2016s/hw-1-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-phys227-2016s/hw-1-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-phys227-2016s/hw-1-patti102.svg?branch=master)](https://travis-ci.org/chapman-phys227-2016s/hw-1-patti102)
 
 **Due date:** 2016/02/09
 
@@ -19,7 +19,7 @@ Finally, to cleanly present your work, create a Jupyter notebook ```hw1.ipynb```
 
 ## Assessment
 
-_\<Analyze what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.\>_
+These were fun excercises. It was the perfect amount of work for me to be able to solve every problem both as elegantly and as possible while in the most sophisticated way that I could. I think that this is the appropriate amount of homework for a week of class.
 
 ## Honor Pledge
 
@@ -28,6 +28,8 @@ I pledge that all the work in this repository is my own with only the following 
 * Content of starter files supplied by the instructor;
 * Code borrowed from another source, documented with correct attribution in the code and summarized here.
 
+I looked up the meaning of a few error messages, but didn't pay attention to their solutions (they probably didn't really apply to my particular code anyways). I also used the syntax given in the book.
+
 Signed,
 
-_\<your name\>_
+Taylor Patti

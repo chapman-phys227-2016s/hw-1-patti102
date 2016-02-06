@@ -13,11 +13,11 @@ from sympy import symbols, integrate, lambdify
 
 def trapzint(f, a, b, n):
     """Estimates integral by the construction of n evenly spaced trapezoids on the interval [a, b]"""
-    h = (b-a)/float(n)
+    h = (b-a) / float(n)
     sum = 0
     for i in range(n):
         #h serves double duty as both the x-distance width and the x-distance increment
-        sum = sum + (1.0/2)*h*(f(a + h*i)+f(a + h*(i+1)))
+        sum = sum + (1.0/2)*h*(f(a + h*i) + f(a + h*(i + 1)))
     return sum
 
 def square(t):
@@ -31,33 +31,33 @@ def test_square():
 
 def test_sinusoidal():
     """Ensures that the area of sin from 0 to pi/2 is 1."""
-    apt = (abs(trapzint(math.sin, 0, math.pi/2, 1000)-1)<1E-6)
+    apt = (abs(trapzint(math.sin, 0, math.pi / 2, 1000)-1)<1E-6)
     msg = "Not sin area."
     assert apt, msg
 
 def second_derivative(f, x, h=1e-6):
-    return (f(x-h) - 2*f(x) + f(x+h))/float(h**2)
+    return (f(x - h) - 2 * f(x) + f(x + h)) / float(h**2)
 
 def max_second_derivative(f, a, b, n=1000000):
     """Obtains the maximum absolute value of the second derivative of a function at n points."""
-    inc = (b-a)/float(n)
+    inc = (b - a) / float(n)
     max = abs(second_derivative(f, a))
     for i in range(n):
-        candidate = abs(second_derivative(f, a + inc*(i+1)))
+        candidate = abs(second_derivative(f, a + inc * (i + 1)))
         if candidate > max:
             max = candidate
     return max
 
 def test_sin_maxderivative():
     """sin's max derivative should be 1"""
-    apt = (abs(max_second_derivative(math.sin, 0, 2*math.pi) - 1) < 1E-3)
+    apt = (abs(max_second_derivative(math.sin, 0, 2 * math.pi) - 1) < 1E-3)
     msg = "Wrong derivative for sin"
     assert apt, msg
     
 
 def adaptive_trapzint(f, a, b, eps=1E-5):
     """Calculates the number of intervals required to obtain integral estimation within some precision and implements trapzint with this value."""
-    h = math.sqrt(12*eps)*(((b-a)*max_second_derivative(f, a, b))**(-1/2.0))
+    h = math.sqrt(12 * eps) * (((b - a) * max_second_derivative(f, a, b))**(-1 / 2.0))
     n = (b-a)/float(h)
     #ceil taken to ensure the integrity of the inequality
     n = int(math.ceil(n))

@@ -9,7 +9,7 @@ This code establishes and compares functions of various complexities which use t
 """ 
 
 import math
-#from sympy import symbols, integrate, lambdify
+from sympy import symbols, integrate, lambdify
 
 def trapzint(f, a, b, n):
     """Estimates integral by the construction of n evenly spaced trapezoids on the interval [a, b]"""
@@ -69,7 +69,7 @@ def curve(x):
 def test_adaptive_limits():
     """ensures that the n value given is sufficient for the curve function.
     This function has calculated n of 366 on the interval 0 to 2"""
-    t = var('t')
+    t = symbols('t')
     curve_func = t**2 + t + 1
     integ = integrate(curve_func, t)
     value = lambdify([t], integ)

@@ -19,7 +19,7 @@ Finally, to cleanly present your work, create a Jupyter notebook ```hw1.ipynb```
 
 ## Assessment
 
-This was the right amount of homework for a week. The excercises were fun.
+This was the right amount of homework for a week. The exercises were fun. I appreciate that you didn't just throw every exercise in the book at us. Some professors do this, but I don't think that it makes me learn any more, I think it just makes me think less critically and have less fun with the problems.
 
 ## Honor Pledge
 

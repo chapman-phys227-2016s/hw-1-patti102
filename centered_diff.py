@@ -5,7 +5,8 @@ Copyright (c) 2016 Taylor Patti
 
 License: MIT
 
-Takes the first derivative of functions numerically and demonstrates this with a set of functions and a resulting table.
+Takes the first derivative of functions numerically and demonstrates this with a set of
+functions and a resulting table.
 """    
 
 from math import *
@@ -24,13 +25,16 @@ def test_quaddiff():
     assert apt, msg
 
 def application():
-    """makes list of the difference between the estimated derivative for h=0.01 and the analytical derivative"""
+    """makes list of the difference between the estimated derivative for h=0.01 and
+    the analytical derivative"""
     application_list = []
     x = symbols('x')
     print
     print '%20s %20s' % ('Function', 'Error')
     print
-    funcvar_tuples = [(lambda t: exp(t), 'exp(x)', float(0)), (lambda t : exp(-2*t**2), 'exp(-2*x**2)', float(0)), (lambda t: cos(t), 'cos(x)', 2*pi), (lambda t: log(t), 'log(x)', float(1))]
+    funcvar_tuples = [(lambda t: exp(t), 'exp(x)', float(0)), (lambda t : exp(-2*t**2), \
+    'exp(-2*x**2)', float(0)), (lambda t: cos(t), 'cos(x)', 2*pi), (lambda t: log(t), \
+    'log(x)', float(1))]
     for i in funcvar_tuples:
         prime = diff(i[1], x)
         exact = lambdify([x], prime)
@@ -43,7 +47,8 @@ def application():
 application()
 
 def test_accuracycheck():
-    """ensures that each item in application is bellow a certain threshold and thus above a certain accuracy"""
+    """ensures that each item in application is bellow a certain threshold
+    and thus above a certain accuracy"""
     f = application()
     apt = True
     for i in f:

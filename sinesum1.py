@@ -13,11 +13,13 @@ from math import *
 def S(t, n, T):
     sum = 0
     for i in range(n):
-        sum = sum + ((2 * (i + 1) - 1)**-1) * sin((2 * (2 * (i + 1) - 1) * pi * t) / float(T))
+        sum = sum + ((2 * (i + 1) - 1)**-1) * sin((2 * (2 * (i + 1) - 1) \
+        * pi * t) / float(T))
     return sum*(4/pi)
 
 def test_twosinesum():
-    """checks that the S function is commensurate with direct calculation for t = 1, n = 2, T = 2pi"""
+    """checks that the S function is commensurate with direct calculation
+    for t = 1, n = 2, T = 2pi"""
     apt = abs(S(1, 2, 2 * pi) - (4 / pi) * (sin(1) + sin(3) / 3)) < 1E-3
     msg = "Sums do not match."
     assert apt, msg
@@ -56,7 +58,8 @@ def table(t):
     alpha2 = [difference(t*alpha_list[1], n_value, T) for n_value in n_list]
     alpha3 = [difference(t*alpha_list[2], n_value, T) for n_value in n_list]
     for i in range(6):
-        print '%10d %10.2f %10.2f %10.2f' % (n_list[i], alpha1[i], alpha2[i], alpha3[i])
+        print '%10d %10.2f %10.2f %10.2f' % (n_list[i], alpha1[i], \
+        alpha2[i], alpha3[i])
         
 table(1)
 

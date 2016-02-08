@@ -56,7 +56,8 @@ def test_sin_maxderivative():
     
 
 def adaptive_trapzint(f, a, b, eps=1E-5):
-    """Calculates the number of intervals required to obtain integral estimation within some precision and implements trapzint with this value."""
+    """Calculates the number of intervals required to obtain integral estimation within
+    some precision and implements trapzint with this value."""
     h = math.sqrt(12 * eps) * (((b - a) * max_second_derivative(f, a, b))**(-1 / 2.0))
     n = (b-a)/float(h)
     #ceil taken to ensure the integrity of the inequality
@@ -79,10 +80,12 @@ def test_adaptive_limits():
     msg = "N is too small."
     assert apt, msg
 
-def preformance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), ('sin(x)', math.sin, [0.0, math.pi]), ('sin(x)', math.sin, [0, math.pi/2.0])]):
-    """Outputs the function, interval, error, and n values into a table. Note that here, the exact answers were simply given in an
-    array as these integrals were considered both common and fundamental knowledge. If you would like to see an example of symbolic integration and subsequent
-    numerical evaluation, please see above the function 'test_adaptive_limits'"""
+def preformance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), \
+   ('sin(x)', math.sin, [0.0, math.pi]), ('sin(x)', math.sin, [0, math.pi/2.0])]):
+    """Outputs the function, interval, error, and n values into a table. Note that here, 
+    the exact answers were simply given in an array as these integrals were considered both
+    common and fundamental knowledge. If you would like to see an example of symbolic integration
+    and subsequent numerical evaluation, please see above the function 'test_adaptive_limits'"""
     exact = [0, 2, 1]
     print
     print 'Preformance Table of Various Functions'

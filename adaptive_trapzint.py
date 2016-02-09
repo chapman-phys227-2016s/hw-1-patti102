@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """
 File: adaptive_trapzint.py
 
@@ -6,7 +8,7 @@ Copyright (c) 2016 Taylor Patti
 License: MIT
 
 This code establishes and compares functions of various complexities which use trapezoids to estimate the area under curves in the plane.
-""" 
+"""
 
 import math
 from sympy import symbols, integrate, lambdify
@@ -80,7 +82,7 @@ def test_adaptive_limits():
     msg = "N is too small."
     assert apt, msg
 
-def preformance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), \
+def performance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), \
    ('sin(x)', math.sin, [0.0, math.pi]), ('sin(x)', math.sin, [0, math.pi/2.0])]):
     """Outputs the function, interval, error, and n values into a table. Note that here, 
     the exact answers were simply given in an array as these integrals were considered both
@@ -88,7 +90,7 @@ def preformance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), \
     and subsequent numerical evaluation, please see above the function 'test_adaptive_limits'"""
     exact = [0, 2, 1]
     print
-    print 'Preformance Table of Various Functions'
+    print 'Performance Table of Various Functions'
     print
     print '%10s %15s %15s %15s' % ('Function', 'Interval', 'Error', 'N-value')
     print
@@ -98,4 +100,4 @@ def preformance_table(function_tuples=[('cos(x)', math.cos, [0.0, math.pi]), \
         print '%9s %10.2f %2s %3.2f %17E %9d' % (i[0], i[2][0], 'to', i[2][1], error, nvalue)
         print
 
-preformance_table()
+#performance_table()

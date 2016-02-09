@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """
 File: find_primes.py
 

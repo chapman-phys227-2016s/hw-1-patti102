@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """
 File: centered_diff.py
 
@@ -43,8 +45,6 @@ def application():
         print
         application_list.append(error)
     return application_list
-
-application()
 
 def test_accuracycheck():
     """ensures that each item in application is bellow a certain threshold

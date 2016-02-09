@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 """
 File: sinesum1.py
 
@@ -60,7 +62,3 @@ def table(t):
     for i in range(6):
         print '%10d %10.2f %10.2f %10.2f' % (n_list[i], alpha1[i], \
         alpha2[i], alpha3[i])
-        
-table(1)
-
-
